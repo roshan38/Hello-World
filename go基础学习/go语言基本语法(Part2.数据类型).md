@@ -1,4 +1,21 @@
 # 第二部分 各变量的类型详解
+Go语言的基本类型有：
+
+bool
+
+string
+
+int、int8、int16、int32、int64
+
+uint、uint8、uint16、uint32、uint64、uintptr //u即无符号
+
+byte // uint8 的别名
+
+rune // int32 的别名 代表一个 Unicode 码
+
+float32、float64
+
+complex64、complex128//复数类型，复数类型的值一般由浮点数表示的实数部分、加号“+”、浮点数表示的虚数部分，以及小写字母“i”组成。比如：*3.7E+1 + 5.98E-2i*
 ## 整数型（没什么特别的）
 有一种无符号的整数类型 uintptr，没有指定具体的bit大小但是足以容纳指针。uintptr 类型只有在底层编程时才需要，特别是 Go语言和 C语言函数库或操作系统接口相交互的地方。
 ## 浮点类型（也没什么特别的）
