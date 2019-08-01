@@ -12,16 +12,11 @@ type Data struct {
 }
 
 func dummy() \*Data {
-
-    // 实例化c为Data类型
     var c Data
-
-    //返回函数局部变量地址
     return &c
 }
 
 func main() {
-
     fmt.Println(dummy())
 }
 
@@ -48,3 +43,27 @@ $ go run -gcflags "-m -l" main.go
 生命周期与作用域不同，作用域学C的时候了解过，生命周期可能会更长，就像上一节的例子中，c的生命周期超出了它的作用域。
 ## 常量和const关键字
 go的常量用const定义，只能是bool、数字型（整数、浮点数、复数）和字符串//如果函数返回值是以上类型的也能const
+
+const也可以批量声明：
+const (
+    a = 1
+    b          //b==1
+    c = 2
+    d          //d==2
+)
+
+还有另一种批量声明：iota常量生产器，比较少用，在模拟枚举的时候有用，可以[展阅读一下]https://blog.csdn.net/thisinnocence/article/details/88046825)
+
+**无类型常量**这里看不懂，不知道想表达什么
+
+## 枚举
+go语言现阶段没有枚举，可以通过const和iota来模拟枚举：
+type Weapon int
+
+const (
+     Arrow Weapon = iota    // 开始生成枚举值, 默认为0
+     Shuriken               // 1
+     SniperRifle            // 2
+     Rifle                  // 3
+     Blower                 // 4
+)
